@@ -5,7 +5,9 @@ from datetime import datetime, time
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 import asyncio
+from dotenv import load_dotenv
 
+load_dotenv()
 # Enable logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
@@ -210,7 +212,7 @@ async def send_daily_reminder(context: ContextTypes.DEFAULT_TYPE):
 def main():
     """Start the bot"""
     # Replace 'YOUR_BOT_TOKEN' with your actual bot token
-    BOT_TOKEN = "8196126712:AAE1S7vgvaGrfoAnVzr8Yjitiip9iqZynOE"
+    BOT_TOKEN = os.getenv("BOT_TOKEN")
     
     # Create the Application
     application = Application.builder().token(BOT_TOKEN).build()

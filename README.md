@@ -5,3 +5,6 @@ fk security?
 shld upload to cloud
 
 shld be able to add due dates too
+
+
+scp bot.py requirements.txt kuwroi@your_server_ip:~/telegram-bot/
